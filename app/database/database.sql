@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS categories (
 CREATE TABLE IF NOT EXISTS under_categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    category_id INT,
+    category_id INT NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
 
@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS products (
     price DECIMAL(10, 2) NOT NULL,
     image_url VARCHAR(255) NOT NULL,
     stock INT NOT NULL DEFAULT 0,
-    category_id INT,
+    under_category_id INT,
     popularity INT NOT NULL DEFAULT 0,
-    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+    FOREIGN KEY (under_category_id) REFERENCES under_categories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS shopping_carts (

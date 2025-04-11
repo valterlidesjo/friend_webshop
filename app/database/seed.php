@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '\dbh.classes.php';
+require_once('app/database/dbh.classes.php');
+require_once('app/models/GetCategories.php');
+require_once('app/controllers/api/GetCategoriesController.php');
+
 class Seed extends Dbh
 {
 
@@ -20,23 +23,33 @@ class Seed extends Dbh
             return;
         }
 
-        $this->seedUnderCategories();
         $this->seedCategories();
+        $this->seedUnderCategories();
         $this->seedProducts();
     }
 
     private function seedUnderCategories()
     {
-        $pdo = $this->connect();
+        $categories = new GetCategoriesController();
+        $data = $categories->useGetCategories();
 
-        $underCategories = ['Skyfish', 'Gray', 'Greenman', 'Parrot', 'Eagle', 'Vulture', 'Brownbear', 'Polarbear', 'Grizzlybear'];
-
-        foreach ($underCategories as $underCategory) {
-            $stmt = $pdo->prepare("INSERT INTO under_categories (name) VALUES (?)");
-            $stmt->execute([$underCategory]);
+        foreach ($data['data'] as $category) {
+            $category_id = $category['id'];
+            $category_name = $category['name'];
+            if($category_name == 'Aliens'){
+                $underCategories = ['Skyfish', 'Gray', 'Greenman'];
+            } elseif($category_name == 'Birds'){
+                $underCategories = ['Parrot', 'Eagle', 'Vulture'];
+            } elseif($category_name == 'Bears'){
+                $underCategories = ['Brownbear', 'Polarbear', 'Grizzlybear'];
+            }
+            foreach ($underCategories as $sub) {
+                $pdo = $this->connect();
+                $stmt = $pdo->prepare("INSERT INTO under_categories (name, category_id) VALUES (?, ?)");
+                $stmt->execute([$sub, $category_id]);
+            }
         }
 
-        echo "Seeded under categories!";
     }
 
     private function seedCategories()
@@ -55,7 +68,6 @@ class Seed extends Dbh
 
     private function seedProducts()
     {
-        $imageCategory = ['Alien', 'Bird', 'Bear'];
 
         $pdo = $this->connect();
 
@@ -64,14 +76,21 @@ class Seed extends Dbh
             $description = "This is Friend $i, a great companion!";
             $price = rand(10, 500);
             $stock = rand(1, 20);
-            $category_id = rand(1, 3);
+            $under_category_id = rand(1, 9);
+            if ($under_category_id >= 1 && $under_category_id <= 3) {
+                $imageCategory = "Alien";
+            } elseif ($under_category_id >= 4 && $under_category_id <= 6) {
+                $imageCategory = "Bird";
+            } else {
+                $imageCategory = "Bear";
+            }    
             $imageNumber = rand(1, 3);
-            $image_url = "/src/assets/" . $imageCategory[$category_id - 1] . $imageNumber . ".jpg";
+            $image_url = "/src/assets/" . $imageCategory . $imageNumber . ".jpg";        
             $popularity = rand(0, 100);
 
-            $stmt = $pdo->prepare("INSERT INTO products (name, description, price, image_url, stock, category_id, popularity)
+            $stmt = $pdo->prepare("INSERT INTO products (name, description, price, image_url, stock, under_category_id, popularity)
                                    VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$name, $description, $price, $image_url, $stock, $category_id, $popularity]);
+            $stmt->execute([$name, $description, $price, $image_url, $stock, $under_category_id, $popularity]);
         }
 
         echo "Seeded 100 products!";

@@ -1,4 +1,4 @@
-<section class="flex flex-col justify-evenly h-[calc(100vh-65px)] w-full px-8">
+<section class="flex flex-col justify-evenly h-[calc(100vh-65px)] w-full px-8 pb-4">
     <div>
         <p class="font-['Jomhuria'] text-[100px] leading-[0.7] pt-16">A <span class="text-orange-500">FRIEND.</span> <br>
             MADE <br>
@@ -14,45 +14,49 @@
 
     </div>
 </section>
-<section class="flex flex-col items-center h-screen w-full bg-[#FFFDCF] px-8">
+<section class="flex flex-col items-center h-auto w-full bg-[#FFFDCF] px-8">
     <div class="w-full flex justify-center items-center">
         <p class="text-[50px] text-orange-500 font-['Jomhuria']">POPULAR FRIENDS</p>
     </div>
-    <div class="flex w-full justify-between items-center pb-8">
-        <?php
-        $header = 'Milbert';
-        $secHeader = 'Skyfish';
-        $price = '$319';
-        $image = '/dashboard/webbshop-uppgift/app/src/assets/alien2.jpg';
-        include view('components/friendbox.php');
+    <div class="w-full flex flex-col justify-between">
+    <?php
+        require_once 'app/database/dbh.classes.php';
+        require_once 'app/models/GetPopularProducts.php';
+        require_once 'app/controllers/api/GetPopularProductsController.php';
+
+        $controller = new GetPopularProductsController();
+        $response = $controller->useGetPopularProducts();
+        
+        if ($response['status'] === 'success') {
+            $counter = 2;
+            $products = $response['data'];
+            foreach ($products as $index => $product) {
+
+                if ($counter % 2 === 0) {
+                    echo '<div class="flex w-full justify-between pb-8">';
+                }
+
+                $header = $product['name'];
+                $secHeader = $product['under_category_name'];
+                $price = '$' . $product['price'];
+                $image = '/dashboard/webbshop-uppgift/app' . $product['image_url'];
+                $id = $product['id'];
+        
+                include view('components/friendbox.php');
+
+                if (($counter + 1) % 2 === 0 || $index === count($products) - 1) {
+                    echo '</div>';
+                }
+
+                $counter++;
+            }
+        } else {
+            echo "Något gick fel vid hämtning av produkter.";
+        }
         ?>
-        <?php
-        $header = 'Kevin';
-        $secHeader = 'Brownbear';
-        $price = '$69';
-        $image = '/dashboard/webbshop-uppgift/app/src/assets/bear1.jpg';
-        include view('components/friendbox.php');
-        ?>
+
     </div>
-    <div class="flex w-full justify-between items-center pb-8">
-        <?php
-        $header = 'Milbert';
-        $secHeader = 'Skyfish';
-        $price = '$319';
-        $image = '/dashboard/webbshop-uppgift/app/src/assets/alien2.jpg';
-        include view('components/friendbox.php');
-        ?>
-        <?php
-        $header = 'Kevin';
-        $secHeader = 'Brownbear';
-        $price = '$69';
-        $image = '/dashboard/webbshop-uppgift/app/src/assets/bear1.jpg';
-        include view('components/friendbox.php');
-        ?>
-    </div>
-    <div class="flex w-full justify-between items-center pb-8">
-        <p>6 more, need 10 total</p>
-    </div>
+
 </section>
 <section class="flex flex-col justify-evenly h-auto w-full px-8">
     <div>
