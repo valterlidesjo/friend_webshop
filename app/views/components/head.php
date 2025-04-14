@@ -6,5 +6,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Jomhuria&display=swap" rel="stylesheet">
+    <script src='/dashboard/webbshop-uppgift/app/src/script.js' defer></script>
     <title>FRIEND.</title>
 </head>

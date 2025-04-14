@@ -1,4 +1,4 @@
-<section class="flex flex-col justify-evenly h-[calc(100vh-65px)] w-full px-8 pb-4">
+<section class="flex flex-col justify-evenly h-screen w-full px-8 pb-4">
     <div>
         <p class="font-['Jomhuria'] text-[100px] leading-[0.7] pt-16">A <span class="text-orange-500">FRIEND.</span> <br>
             MADE <br>
@@ -8,25 +8,25 @@
         <img src="/dashboard/webbshop-uppgift/app/src/assets/alien1.jpg" alt="Alien holding hand" class="w-3/4">
     </div>
     <div class="w-full flex justify-center items-center">
-        <button class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
+        <button class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl scroll-btn">
             <p class="font-['Jomhuria'] text-[42px] text-white">Discover more</p>
         </button>
 
     </div>
 </section>
-<section class="flex flex-col items-center h-auto w-full bg-[#FFFDCF] px-8">
+<section class="flex flex-col items-center h-auto w-full bg-[#FFFDCF] px-8" id="more">
     <div class="w-full flex justify-center items-center">
         <p class="text-[50px] text-orange-500 font-['Jomhuria']">POPULAR FRIENDS</p>
     </div>
     <div class="w-full flex flex-col justify-between">
-    <?php
+        <?php
         require_once 'app/database/dbh.classes.php';
         require_once 'app/models/GetPopularProducts.php';
         require_once 'app/controllers/api/GetPopularProductsController.php';
 
         $controller = new GetPopularProductsController();
         $response = $controller->useGetPopularProducts();
-        
+
         if ($response['status'] === 'success') {
             $counter = 2;
             $products = $response['data'];
@@ -41,7 +41,7 @@
                 $price = '$' . $product['price'];
                 $image = '/dashboard/webbshop-uppgift/app' . $product['image_url'];
                 $id = $product['id'];
-        
+
                 include view('components/friendbox.php');
 
                 if (($counter + 1) % 2 === 0 || $index === count($products) - 1) {
@@ -63,16 +63,16 @@
         <p class="text-[60px] text-orange-500 font-['Jomhuria']">OUR CATEGORIES</p>
     </div>
     <div class="flex w-full justify-between items-center gap-4 pb-4">
-        <button class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
+        <a href="products?category=bears" class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
             <p class="font-['Jomhuria'] text-[42px] text-white">Bears</p>
-        </button>
-        <button class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
+        </a>
+        <a href="products?category=birds" class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
             <p class="font-['Jomhuria'] text-[42px] text-white">Birds</p>
-        </button>
+        </a>
     </div>
     <div class="flex w-full justify-center items-center">
-        <button class="flex flex-col items-center justify-center w-[calc(50%-8px)] bg-orange-500 rounded-4xl">
+        <a href="products?category=aliens" class="flex flex-col items-center justify-center w-[calc(50%-8px)] bg-orange-500 rounded-4xl">
             <p class="font-['Jomhuria'] text-[42px] text-white">Aliens</p>
-        </button>
+        </a>
     </div>
 </section>

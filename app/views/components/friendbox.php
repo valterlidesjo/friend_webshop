@@ -1,4 +1,4 @@
-<a href="/friend/<?php echo isset($id) ? $id : 'default'; ?>"
+<a href="/dashboard/webbshop-uppgift/friend?id=<?php echo isset($id) ? $id : 'default'; ?>"
     class="w-[calc(50%-1rem)] flex flex-col justify-between items-center h-[265px] bg-white rounded-2xl">
     <div class="p-2 flex flex-col items-start justify-center w-full h-auto">
         <p class="text-[1rem] font-bold font-['Geist_Mono']">
