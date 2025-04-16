@@ -1,6 +1,6 @@
 <?php
 $sortOptions = [
-    'name_asc' => 'Name ↑',
+    'name_asc' => 'abc',
     'price_asc' => '<i class="fa-solid fa-arrow-down-short-wide"></i>',
     'price_desc' => '<i class="fa-solid fa-arrow-down-wide-short"></i>'
 ];
@@ -8,30 +8,39 @@ $sortOptions = [
 $currentParams = $_GET;
 ?>
 
-<section class="flex flex-col items-center h-auto w-full bg-[#FFFDCF] px-8">
-    <article class="flex items-center justify-between h-auto w-full" style="margin-top: 64px;">
-        <div class="w-full flex flex-col justify-center items-center">
-            <h1 class="text-[60px] text-orange-500 font-['Jomhuria'] w-full">FRIENDS</h1>
-            <p class="text-[14px] font-['Geist_Mono']">Find a suitable friend of your liking, all happy and sustainable.</p>
-            <div class="flex gap-2">
+<section class="products-container">
+    <article class="products-header-container">
+        <div class="products-header">
+            <h1>FRIENDS</h1>
+            <p>Find a suitable friend of your liking, all happy and sustainable.</p>
+            <div class="products-sorting">
                 <?php foreach ($sortOptions as $key => $label): ?>
                     <?php
                     $params = $currentParams;
                     $params['sort'] = $key;
                     $queryString = http_build_query($params);
                     ?>
-                    <a href="?<?php echo $queryString; ?>"
-                        class="rounded-full border-black border-2 px-4 py-1 text-xl">
-                        <?php echo $label; ?>
-                    </a>
+                    <span>
+                        <a href="?<?php echo $queryString; ?>">
+                            <?php echo $label; ?>
+                        </a>
+                    </span>
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="">
+        <div class="products-map">
             <img src="/dashboard/webbshop-uppgift/app/src/assets/street.jpg" alt="Street map image">
+            <p class="products-map-text">
+                <span>
+                    Showroom <br>
+                </span>
+                6969 Downtown <br>
+                Houston, TX <br>
+                90210
+            </p>
         </div>
     </article>
-    <div class="w-full flex flex-col justify-between">
+    <div class="products">
         <?php
         require_once 'app/database/dbh.classes.php';
         require_once 'app/models/GetProducts.php';
@@ -46,14 +55,14 @@ $currentParams = $_GET;
         } else {
             $response = $controller->useGetProducts();
         }
-        
+
         if ($response['status'] === 'success') {
             $counter = 2;
             $products = $response['data'];
             foreach ($products as $index => $product) {
 
                 if ($counter % 2 === 0) {
-                    echo '<div class="flex w-full justify-between pb-8">';
+                    echo '<div class="products-box">';
                 }
 
                 $header = $product['name'];
@@ -71,7 +80,7 @@ $currentParams = $_GET;
                 $counter++;
             }
         } else {
-            echo "<p class='text-center text-red-500'>".$response['message']."</p>";
+            echo "<p class=''>" . $response['message'] . "</p>";
         }
         ?>
 

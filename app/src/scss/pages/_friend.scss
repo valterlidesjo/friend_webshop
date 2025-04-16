@@ -1,0 +1,80 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.friend-container {
+  @include m.flex(column, start, center);
+  width: 100%;
+  padding: 0 2rem;
+  .friend-page-back-button {
+    width: 100%;
+    @include m.flex(row, start, center);
+    span {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 100%;
+      @include m.border();
+      @include m.flex(row);
+      i {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .friend-page-image-container {
+    width: 100%;
+    @include m.flex(row);
+    .friend-page-image {
+      width: 70%;
+      height: auto;
+    }
+  }
+  .friend-info-container {
+    width: 100%;
+    @include m.flex(column, start, start);
+    .friend-page-name {
+      width: 100%;
+      @include m.flex(row, start, center);
+      p {
+        font-family: v.$sFont;
+        font-size: 60px;
+        color: v.$pCol;
+      }
+    }
+  }
+  .friend-page-category,
+  .friend-page-race,
+  .friend-page-stock,
+  .friend-page-price,
+  .friend-page-popularity {
+    width: 100%;
+    @include m.flex(row, space-between, center);
+    margin-bottom: 1rem;
+    p {
+      color: v.$black;
+      font-size: 0.8rem;
+    }
+    .friend-page-desc {
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+  }
+
+  .buy-button {
+    width: 100%;
+    @include m.flex(column);
+    padding-top: 1rem;
+    button {
+      background-color: v.$pCol;
+      width: 80%;
+      border-radius: 40px;
+      border: none;
+      height: 100%;
+      padding: 8px 0;
+      p {
+        font-family: v.$sFont;
+        font-size: 40px;
+        color: v.$white;
+      }
+    }
+  }
+}

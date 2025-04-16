@@ -1,15 +1,15 @@
-<footer class="font-['Geist_Mono'] flex flex-col justify-center items-center w-full h-auto p-8">
-    <div class="w-full flex justify-between items-center pb-4">
-        <div class="flex flex-col items-start justify-center w-1/2 gap-2">
-            <a href="">Alien</a>
-            <a href="">Birds</a>
-            <a href="">Bears</a>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <a href="products?category=aliens">Alien</a>
+            <a href="products?category=birds">Birds</a>
+            <a href="products?category=bears">Bears</a>
         </div>
-        <div class="flex flex-col items-end justify-center w-1/2 gap-2">
+        <div class="footer-right">
+            <a href="https://valterlidesjo.se/">Home</a>
             <a href="https://valterlidesjo.se/">Contact</a>
             <a href="https://valterlidesjo.se/">About Us</a>
-            <a href="https://valterlidesjo.se/">Privacy Policy</a>
         </div>
     </div>
-    <a href="https://valterlidesjo.se/">Made by Valter Lidesjö</a>
+    <a href="https://valterlidesjo.se/" class="valter">Made by Valter Lidesjö</a>
 </footer>

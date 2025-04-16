@@ -2,7 +2,7 @@
 
 class GetProducts extends Dbh
 {
-    protected function getProducts($category = null, $sortOption = null)
+    protected function getProducts($category = null, $sortOption = null, $offset = 0, $limit = 10)
     {
         $where = '';
         $orderBy = 'products.id ASC';
@@ -36,8 +36,10 @@ class GetProducts extends Dbh
                     $orderBy = 'RAND()';
             }
         }
-        $sql = "SELECT products.*, under_categories.name AS under_category_name FROM products JOIN under_categories ON products.under_category_id = under_categories.id $where ORDER BY $orderBy;";
+        $sql = "SELECT products.*, under_categories.name AS under_category_name FROM products JOIN under_categories ON products.under_category_id = under_categories.id $where ORDER BY $orderBy LIMIT :limit OFFSET :offset;;";
         $stmt = $this->connect()->prepare($sql);
+        $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         if (!$stmt->execute()) {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");

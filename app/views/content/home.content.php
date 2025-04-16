@@ -1,24 +1,24 @@
-<section class="flex flex-col justify-evenly h-screen w-full px-8 pb-4">
-    <div>
-        <p class="font-['Jomhuria'] text-[100px] leading-[0.7] pt-16">A <span class="text-orange-500">FRIEND.</span> <br>
+<section class="home-start-container">
+    <div class="start-text">
+        <p>A <span class="friend">FRIEND.</span> <br>
             MADE <br>
             FOR YOU</p>
     </div>
-    <div class="flex justify-center items-center w-full">
-        <img src="/dashboard/webbshop-uppgift/app/src/assets/alien1.jpg" alt="Alien holding hand" class="w-3/4">
+    <div class="start-image">
+        <img src="/dashboard/webbshop-uppgift/app/src/assets/alien1.jpg" alt="Alien holding hand" class="">
     </div>
-    <div class="w-full flex justify-center items-center">
-        <button class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl scroll-btn">
-            <p class="font-['Jomhuria'] text-[42px] text-white">Discover more</p>
+    <div class="start-button">
+        <button class="scroll-btn">
+            <p >Discover more</p>
         </button>
 
     </div>
 </section>
-<section class="flex flex-col items-center h-auto w-full bg-[#FFFDCF] px-8" id="more">
-    <div class="w-full flex justify-center items-center">
-        <p class="text-[50px] text-orange-500 font-['Jomhuria']">POPULAR FRIENDS</p>
+<section class="popular-container" id="more">
+    <div class="popular-text">
+        <p>POPULAR FRIENDS</p>
     </div>
-    <div class="w-full flex flex-col justify-between">
+    <div class="popular">
         <?php
         require_once 'app/database/dbh.classes.php';
         require_once 'app/models/GetPopularProducts.php';
@@ -33,7 +33,7 @@
             foreach ($products as $index => $product) {
 
                 if ($counter % 2 === 0) {
-                    echo '<div class="flex w-full justify-between pb-8">';
+                    echo '<div class="popular-box">';
                 }
 
                 $header = $product['name'];
@@ -58,21 +58,19 @@
     </div>
 
 </section>
-<section class="flex flex-col justify-evenly h-auto w-full px-8">
+<section class="categories-container">
     <div>
-        <p class="text-[60px] text-orange-500 font-['Jomhuria']">OUR CATEGORIES</p>
+        <p class="categories-header">OUR CATEGORIES</p>
     </div>
-    <div class="flex w-full justify-between items-center gap-4 pb-4">
-        <a href="products?category=bears" class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
-            <p class="font-['Jomhuria'] text-[42px] text-white">Bears</p>
+    <div class="categories-sec-container">
+        <a href="products?category=bears" class="category-btn">
+            <p>Bears</p>
         </a>
-        <a href="products?category=birds" class="flex flex-col items-center justify-center w-full bg-orange-500 rounded-4xl">
-            <p class="font-['Jomhuria'] text-[42px] text-white">Birds</p>
-        </a>
-    </div>
-    <div class="flex w-full justify-center items-center">
-        <a href="products?category=aliens" class="flex flex-col items-center justify-center w-[calc(50%-8px)] bg-orange-500 rounded-4xl">
-            <p class="font-['Jomhuria'] text-[42px] text-white">Aliens</p>
+        <a href="products?category=birds" class="category-btn">
+            <p>Birds</p>
         </a>
     </div>
+        <a href="products?category=aliens" class="category-btn">
+            <p>Aliens</p>
+        </a>
 </section>

@@ -1,0 +1,79 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.products-container {
+  @include m.flex(column);
+  width: 100%;
+  padding: 2rem;
+  background-color: v.$sCol;
+  .products-header-container {
+    width: 100%;
+    @include m.flex(row, space-between, center);
+    padding-bottom: 2rem;
+    .products-header {
+      @include m.flex(column, start, start);
+      width: 50%;
+      h1 {
+        font-size: 60px;
+        font-family: v.$sFont;
+        color: v.$pCol;
+      }
+      p {
+        font-size: 0.8rem;
+        padding-bottom: 1rem;
+      }
+      .products-sorting {
+        @include m.flex(row, space-between, center);
+        width: 100%;
+        padding-right: 2rem;
+        span {
+          height: 2rem;
+          width: 2rem;
+          border-radius: 50%;
+          @include m.border();
+          @include m.flex(row);
+
+          a {
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: v.$black;
+          }
+        }
+      }
+    }
+    .products-map {
+      width: 50%;
+      position: relative;
+      img {
+        width: 100%;
+        height: 181px;
+        object-fit: cover;
+        border-radius: 15%;
+      }
+      .products-map-text {
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem;
+        span {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: v.$pCol;
+        }
+      }
+    }
+  }
+
+  .products {
+    @include m.flex(column);
+    width: 100%;
+    .products-box {
+      @include m.flex(row);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

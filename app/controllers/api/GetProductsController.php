@@ -7,7 +7,11 @@ class GetProductsController extends GetProducts {
     public function useGetProducts() {
         $sortOption = $_GET['sort'] ?? 'id_asc';
         $category = $_GET['category'] ?? null;
-        $this->products = $this->getProducts($category, $sortOption);
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $limit = 10; // Number of products per page
+        $offset = ($page - 1) * $limit;
+
+        $this->products = $this->getProducts($category, $sortOption, $offset, $limit);
         if (empty($this->products)) {
             $this->response['status'] = 'error';
             $this->response['message'] = 'No products found';

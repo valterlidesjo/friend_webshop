@@ -1,0 +1,13 @@
+@use 'utils/variables';
+@use 'utils/mixins';
+@use 'utils/global';
+
+@use 'layout/navbar';
+@use 'layout/footer';
+@use 'layout/template';
+
+@use 'pages/home';
+@use 'pages/products';
+@use 'pages/friend';
+
+@use 'components/friendbox';

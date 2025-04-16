@@ -1,0 +1,490 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Geist Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.nav {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nav .nav-container {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .nav-container p {
+  font-family: "Jomhuria";
+  font-size: 60px;
+  color: #DB5107;
+  padding: 1rem;
+}
+.nav .nav-container .nav-right {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+.nav .nav-container .nav-right .hamburger {
+  border: none;
+  height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  width: 3rem;
+  background: transparent;
+}
+.nav .nav-container .nav-right .hamburger .span-1 {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+.nav .nav-container .nav-right .hamburger .span-2 {
+  width: 70%;
+  height: 2px;
+  background-color: black;
+}
+.nav .nav-container .nav-right i {
+  font-size: 1.8rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+}
+.footer .footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.footer .footer-container .footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 50%;
+  padding: 2rem;
+  gap: 8px;
+}
+.footer .footer-container .footer-left a {
+  text-decoration: none;
+  color: black;
+}
+.footer .footer-container .footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  width: 50%;
+  padding: 2rem;
+  gap: 8px;
+}
+.footer .footer-container .footer-right a {
+  text-decoration: none;
+  color: black;
+}
+.footer .valter {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 2rem;
+}
+
+.template-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.template-container .template-main {
+  height: 100%;
+  width: 100%;
+}
+
+.home-start-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100svh - 64px);
+  padding: 2rem;
+}
+.home-start-container .start-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+.home-start-container .start-text p {
+  font-family: "Jomhuria";
+  font-size: 100px;
+  line-height: 60%;
+}
+.home-start-container .start-text p .friend {
+  font-family: "Jomhuria";
+  color: #DB5107;
+}
+.home-start-container .start-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-start-container .start-button button {
+  background-color: #DB5107;
+  width: 80%;
+  border-radius: 40px;
+  border: none;
+  height: 100%;
+  padding: 8px 0;
+}
+.home-start-container .start-button button p {
+  font-family: "Jomhuria";
+  font-size: 40px;
+  color: white;
+}
+
+.popular-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #FFFDCF;
+  padding: 2rem;
+}
+.popular-container .popular-text {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+.popular-container .popular-text p {
+  font-family: "Jomhuria";
+  font-size: 50px;
+}
+.popular-container .popular {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.popular-container .popular .popular-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+.categories-container .categories-header {
+  font-family: "Jomhuria";
+  font-size: 60px;
+}
+.categories-container .categories-sec-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.categories-container .category-btn {
+  background-color: #DB5107;
+  border-radius: 50px;
+  padding: 4px 1rem;
+  border: none;
+  height: 100%;
+  text-decoration: none;
+  margin: 4px;
+}
+.categories-container .category-btn p {
+  font-family: "Jomhuria";
+  font-size: 40px;
+  color: white;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+  background-color: #FFFDCF;
+}
+.products-container .products-header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.products-container .products-header-container .products-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 50%;
+}
+.products-container .products-header-container .products-header h1 {
+  font-size: 60px;
+  font-family: "Jomhuria";
+  color: #DB5107;
+}
+.products-container .products-header-container .products-header p {
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}
+.products-container .products-header-container .products-header .products-sorting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 2rem;
+}
+.products-container .products-header-container .products-header .products-sorting span {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.products-container .products-header-container .products-header .products-sorting span a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: black;
+}
+.products-container .products-header-container .products-map {
+  width: 50%;
+  position: relative;
+}
+.products-container .products-header-container .products-map img {
+  width: 100%;
+  height: 181px;
+  object-fit: cover;
+  border-radius: 15%;
+}
+.products-container .products-header-container .products-map .products-map-text {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+}
+.products-container .products-header-container .products-map .products-map-text span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #DB5107;
+}
+.products-container .products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.products-container .products .products-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.friend-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+.friend-container .friend-page-back-button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.friend-container .friend-page-back-button span {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.friend-container .friend-page-back-button span i {
+  font-size: 1.6rem;
+}
+.friend-container .friend-page-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.friend-container .friend-page-image-container .friend-page-image {
+  width: 70%;
+  height: auto;
+}
+.friend-container .friend-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.friend-container .friend-info-container .friend-page-name {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.friend-container .friend-info-container .friend-page-name p {
+  font-family: "Jomhuria";
+  font-size: 60px;
+  color: #DB5107;
+}
+.friend-container .friend-page-category,
+.friend-container .friend-page-race,
+.friend-container .friend-page-stock,
+.friend-container .friend-page-price,
+.friend-container .friend-page-popularity {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.friend-container .friend-page-category p,
+.friend-container .friend-page-race p,
+.friend-container .friend-page-stock p,
+.friend-container .friend-page-price p,
+.friend-container .friend-page-popularity p {
+  color: black;
+  font-size: 0.8rem;
+}
+.friend-container .friend-page-category .friend-page-desc,
+.friend-container .friend-page-race .friend-page-desc,
+.friend-container .friend-page-stock .friend-page-desc,
+.friend-container .friend-page-price .friend-page-desc,
+.friend-container .friend-page-popularity .friend-page-desc {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.friend-container .buy-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+.friend-container .buy-button button {
+  background-color: #DB5107;
+  width: 80%;
+  border-radius: 40px;
+  border: none;
+  height: 100%;
+  padding: 8px 0;
+}
+.friend-container .buy-button button p {
+  font-family: "Jomhuria";
+  font-size: 40px;
+  color: white;
+}
+
+.friend-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  text-decoration: none;
+  border-radius: 20px;
+}
+.friend-box .friend-header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 1rem;
+}
+.friend-box .friend-header-container .friend-header {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+.friend-box .friend-header-container p {
+  font-size: 1rem;
+  color: black;
+}
+.friend-box .friend-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.friend-box .friend-image img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+}
+.friend-box .friend-price {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: black;
+}
+.friend-box .friend-price p {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */

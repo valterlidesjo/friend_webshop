@@ -1,7 +1,7 @@
 <a href="/dashboard/webbshop-uppgift/friend?id=<?php echo isset($id) ? $id : 'default'; ?>"
-    class="w-[calc(50%-1rem)] flex flex-col justify-between items-center h-[265px] bg-white rounded-2xl">
-    <div class="p-2 flex flex-col items-start justify-center w-full h-auto">
-        <p class="text-[1rem] font-bold font-['Geist_Mono']">
+    class="friend-box">
+    <div class="friend-header-container">
+        <p class="friend-header">
             <?php
             if (isset($header)) {
                 echo $header;
@@ -10,7 +10,7 @@
             }
             ?>
         </p>
-        <p class="text-[1rem] font-['Geist_Mono']">
+        <p>
             <?php
             if (isset($secHeader)) {
                 echo $secHeader;
@@ -20,11 +20,11 @@
             ?>
         </p>
     </div>
-    <div class="w-full flex justify-center items-center">
-        <img src="<?php echo $image ?? '/dashboard/webbshop-uppgift/app/src/assets/default-friend.jpg'; ?>" alt="A friend" class="max-w-[110px] max-h-[110px] object-contain">
+    <div class="friend-image">
+        <img src="<?php echo $image ?? '/dashboard/webbshop-uppgift/app/src/assets/default-friend.jpg'; ?>" alt="A friend">
     </div>
-    <div class="flex justify-between items-center p-2 w-full">
-        <p class="text-[1rem] font-bold font-['Geist_Mono']">
+    <div class="friend-price">
+        <p>
             <?php
             if (isset($price)) {
                 echo $price;
@@ -33,7 +33,6 @@
             }
             ?>
         </p>
-        <i class="fa-solid fa-bag-shopping text-[1.2rem]"></i>
+        <i class="fa-solid fa-bag-shopping"></i>    
     </div>
-
 </a>

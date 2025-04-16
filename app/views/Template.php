@@ -5,12 +5,12 @@ include view('components/head.php');
 ?>
 
 <body>
-    <div class="flex h-screen flex-col items-center w-full">
+    <div class="template-container">
         <?php
         include view('components/navbar.php');
         ?>
 
-        <main class="w-full">
+        <main class="template-main">
             <?php
             if (isset($content)) {
                 include $content;

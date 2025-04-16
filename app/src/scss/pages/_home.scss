@@ -1,0 +1,92 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.home-start-container{
+    @include m.flex(column, space-between, center);
+    height: calc(100svh - 64px);
+    padding: 2rem;
+    .start-text{
+        @include m.flex(column, center, start);
+        width: 100%;
+        p{
+            font-family: v.$sFont;
+            font-size: 100px;
+            line-height: 60%;
+            .friend{
+                font-family: v.$sFont;
+                color: v.$pCol;
+            }
+        }
+    }
+    .start-button{
+        width: 100%;
+        @include m.flex(column);
+        button{
+            background-color: v.$pCol;
+            width: 80%;
+            border-radius: 40px;
+            border: none;
+            height: 100%;
+            padding: 8px 0;
+            p{
+                font-family: v.$sFont;
+                font-size: 40px;
+                color: v.$white;
+            }
+        }
+    }
+}
+
+.popular-container{
+    @include m.flex(column);
+    width: 100%;
+    background-color: v.$sCol;
+    padding: 2rem;
+    .popular-text{
+        width: 100%;
+        padding-bottom: 2rem;
+        p{
+            font-family: v.$sFont;
+            font-size: 50px;
+        }
+    }
+    .popular{
+        @include m.flex(column);
+        width: 100%;
+        .popular-box{
+            @include m.flex(row);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+}
+
+
+.categories-container{
+    @include m.flex(column);
+    width: 100%;
+    padding: 2rem;
+    .categories-header{
+        font-family: v.$sFont;
+        font-size: 60px;
+    }
+    .categories-sec-container{
+        @include m.flex(row);
+    }
+    .category-btn{
+        background-color: v.$pCol;
+        border-radius: 50px;
+        padding: 4px 1rem;
+        border: none;
+        height: 100%;
+        text-decoration: none;
+        margin: 4px;
+        p{
+            font-family: v.$sFont;
+            font-size: 40px;
+            color: v.$white;
+        }
+    }
+}

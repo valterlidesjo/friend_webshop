@@ -1,0 +1,33 @@
+@mixin flex ($direction, $justify: center, $align: center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin border($pixels: 1px, $color: black){
+    border: $pixels solid $color;
+};
+
+@mixin horScroll() {
+    display: flex; // Gör barnen till flexbox-element
+    overflow-x: auto; // Tillåt horisontell scroll
+    gap: 0.5rem; // Lägger till avstånd mellan korten
+    padding: 1rem; // Undvik att scrollbaren överlappar innehållet
+    scroll-snap-type: x mandatory; // Valfritt: Snap-effekt för scroll
+    scrollbar-color: lightgray transparent;
+}; 
+
+@mixin desk {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+
+@mixin tablet {
+    @media (min-width: 600px) and (max-width: 1120px) {
+        @content;
+    }
+}
+  
+
