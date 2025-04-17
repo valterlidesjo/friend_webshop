@@ -4,7 +4,7 @@
         <h2>Please register to begin shopping</h2>
     </div>
     <div class="register-form">
-        <form method="POST">
+        <form method="POST" action="/dashboard/webbshop-uppgift/app/includes/RegisterInc.php">
             <input type="text" id="name" name="name" placeholder="Enter name" required>
             <input type="email" id="email" name="email" placeholder="Enter email" required>
             <div class="password-container">
@@ -18,10 +18,10 @@
             <input type="text" id="adress" name="adress" placeholder="Adress" required>
             <input type="text" id="city" name="city" placeholder="City" required>
             <input type="number" id="postCode" name="postCode" placeholder="Post Code" required>
-            <button type="submit">Register</button>
+            <button type="submit" name="submit">Register</button>
         </form>
     </div>
     <div class="register-footer">
-        <p>Already a member?<a href="">Login</a></p>
+        <p>Already a member?<a href="/dashboard/webbshop-uppgift/login">Login</a></p>
     </div>
 </section>

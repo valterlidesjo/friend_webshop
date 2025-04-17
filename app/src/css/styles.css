@@ -633,6 +633,117 @@
   text-decoration: none;
 }
 
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #fffdcf;
+  padding: 6rem 2rem 2rem 2rem;
+}
+.login-container .login-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.login-container .login-header h1 span {
+  color: black;
+  font-family: "Jomhuria";
+  font-size: 60px;
+}
+.login-container .login-header h2 {
+  font-size: 20px;
+}
+.login-container .login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.login-container .login-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1.5rem;
+}
+.login-container .login-form form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.login-container .login-form form input:focus {
+  outline: none;
+}
+.login-container .login-form form .password-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  position: relative;
+}
+.login-container .login-form form .password-container input[type=password],
+.login-container .login-form form .password-container input[type=text] {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.login-container .login-form form .password-container input[type=password]:focus,
+.login-container .login-form form .password-container input[type=text]:focus {
+  outline: none;
+}
+.login-container .login-form form .password-container i {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #747474;
+  cursor: pointer;
+}
+.login-container .login-form form button {
+  background-color: #db5107;
+  width: 100%;
+  border-radius: 40px;
+  border: none;
+  height: 100%;
+  padding: 8px 0;
+  font-family: "Jomhuria";
+  font-size: 40px;
+  color: white;
+}
+.login-container .login-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 2rem;
+}
+.login-container .login-footer p {
+  font-family: "Jomhuria";
+  font-size: 2rem;
+}
+.login-container .login-footer p a {
+  padding-left: 0.5rem;
+  font-family: "Jomhuria";
+  font-size: 2rem;
+  color: #5a1ee5;
+  text-decoration: none;
+}
+
 .friend-box {
   width: 100%;
   display: flex;
