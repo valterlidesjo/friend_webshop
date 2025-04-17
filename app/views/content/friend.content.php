@@ -25,9 +25,9 @@ if ($product) {
 ?>
 <section class="friend-container">
     <div class="friend-page-back-button">
-        <span>
+        <button onclick="window.history.back()">
             <i class="fa-solid fa-arrow-left"></i>
-        </span>
+        </button>
     </div>
     <div class="friend-page-image-container">
         <img src="/dashboard/webbshop-uppgift/app<?php echo $image_url ?>" alt="Friend Image" class="friend-page-image">

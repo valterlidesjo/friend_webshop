@@ -1,0 +1,100 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.register-container {
+  @include m.flex(column);
+  width: 100%;
+  background-color: v.$sCol;
+  padding: 6rem 2rem 2rem 2rem;
+  .register-header {
+    width: 100%;
+    @include m.flex(column, start, start);
+    h1 {
+      span {
+        color: v.$black;
+        font-family: v.$sFont;
+        font-size: 60px;
+      }
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .register-form {
+    width: 100%;
+    @include m.flex(column);
+    padding-top: 2rem;
+    form {
+      @include m.flex(column);
+      width: 100%;
+      gap: 1.5rem;
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        &:focus {
+          outline: none;
+        }
+      }
+      .password-container,
+      .password-repeat-container {
+        @include m.flex(row);
+        width: 100%;
+        gap: 1rem;
+        position: relative;
+        input[type="password"],
+        input[type="text"] {
+          width: 100%;
+          padding: 0.8rem;
+          border-radius: 15px;
+          border: none;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          &:focus {
+            outline: none;
+          }
+        }
+        i {
+          position: absolute;
+          right: 0.5rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 20px;
+          color: v.$grey;
+          cursor: pointer;
+        }
+      }
+      button {
+        background-color: v.$pCol;
+        width: 100%;
+        border-radius: 40px;
+        border: none;
+        height: 100%;
+        padding: 8px 0;
+        font-family: v.$sFont;
+        font-size: 40px;
+        color: v.$white;
+      }
+    }
+  }
+
+  .register-footer {
+    @include m.flex(column);
+    width: 100%;
+    padding-top: 2rem;
+    p {
+      font-family: v.$sFont;
+      font-size: 2rem;
+      a {
+        padding-left: 0.5rem;
+        font-family: v.$sFont;
+        font-size: 2rem;
+        color: v.$blue;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
 .products-container {
   @include m.flex(column);
   width: 100%;
-  padding: 2rem;
+  padding: 6rem 2rem 2rem 2rem;
   background-color: v.$sCol;
   .products-header-container {
     width: 100%;
@@ -66,7 +66,6 @@
       }
     }
   }
-
   .products {
     @include m.flex(column);
     width: 100%;
@@ -74,6 +73,22 @@
       @include m.flex(row);
       gap: 2rem;
       margin-bottom: 2rem;
+    }
+  }
+  .pagination {
+    .page-btn {
+      color: v.$black;
+      font-size: 1rem;
+      &.page-active {
+        color: v.$pCol;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    }
+    .next-btn,
+    .prev-btn {
+      font-size: 0.8rem;
+      color: v.$black;
     }
   }
 }

@@ -5,16 +5,17 @@
 .friend-container {
   @include m.flex(column, start, center);
   width: 100%;
-  padding: 0 2rem;
+  padding: 6rem 2rem 0 2rem;
   .friend-page-back-button {
     width: 100%;
     @include m.flex(row, start, center);
-    span {
+    button {
       height: 2.5rem;
       width: 2.5rem;
       border-radius: 100%;
       @include m.border();
       @include m.flex(row);
+      background: transparent;
       i {
         font-size: 1.6rem;
       }
