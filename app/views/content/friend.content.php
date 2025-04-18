@@ -3,6 +3,8 @@ require_once 'app/database/dbh.classes.php';
 require_once 'app/models/GetProduct.php';
 require_once 'app/controllers/api/GetProductController.php';
 
+session_start();
+
 $productId = $_GET['id'];
 $getProduct = new GetProductController();
 $response = $getProduct->useGetProduct($productId);
@@ -58,9 +60,16 @@ if ($product) {
         </div>
     </article>
     <div class="buy-button">
-        <button>
-            <p>Buy now</p>
-        </button>
+
+        <?php if (isset($_SESSION['userid']) && isset($_SESSION['username'])): ?>
+            <button>
+                <a href="/dashboard/webbshop-uppgift/app/includes/">Buy now</a>
+            </button>
+        <?php else: ?>
+            <button>
+                <a href="/dashboard/webbshop-uppgift/login">Login to buy</a>
+            </button>
+        <?php endif; ?>
 
     </div>
 </section>

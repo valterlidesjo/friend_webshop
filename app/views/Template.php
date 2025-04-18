@@ -18,6 +18,9 @@ include view('components/head.php');
                 echo "<p>Inget innehåll kunde laddas – kontrollera sökvägen: $content</p>";
             }
             ?>
+            <?php
+            include view('components/cartCircle.php');
+            ?>
         </main>
 
         <?php

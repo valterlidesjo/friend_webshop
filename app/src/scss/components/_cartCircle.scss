@@ -1,0 +1,39 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.cart-circle-container {
+  width: 100%;
+  position: relative;
+  height: 5rem;
+  .cart-circle {
+    position: fixed;
+    z-index: 1000;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    @include m.flex(column);
+    background-color: v.$pCol;
+    border-radius: 50%;
+    color: v.$white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      scale: 1.1;
+      transition: all 0.3s ease-in-out;
+    }
+    i {
+      font-size: 1.5rem;
+    }
+    .cart-count {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      color: v.$sCol;
+      font-family: v.$sFont;
+      font-size: 2rem;
+    }
+  }
+}

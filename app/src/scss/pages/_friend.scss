@@ -71,10 +71,11 @@
       border: none;
       height: 100%;
       padding: 8px 0;
-      p {
+      a {
         font-family: v.$sFont;
         font-size: 40px;
         color: v.$white;
+        text-decoration: none;
       }
     }
   }

@@ -16,8 +16,8 @@ if (isset($_POST["submit"])) {
 
     try {
         $login->loginUser();
-        header("location: ../../?success=loggedIn");
+        header("location: ../../products?success=loggedIn");
     } catch (Exception $e) {
-        header("location: ../../?error=LoginFailed");
+        header("location: ../../login?error=LoginFailed");
     }
 }

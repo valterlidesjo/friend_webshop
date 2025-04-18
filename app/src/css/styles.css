@@ -510,10 +510,11 @@
   height: 100%;
   padding: 8px 0;
 }
-.friend-container .buy-button button p {
+.friend-container .buy-button button a {
   font-family: "Jomhuria";
   font-size: 40px;
   color: white;
+  text-decoration: none;
 }
 
 .register-container {
@@ -795,6 +796,44 @@
 }
 .friend-box .friend-price p {
   font-weight: bold;
+}
+
+.cart-circle-container {
+  width: 100%;
+  position: relative;
+  height: 5rem;
+}
+.cart-circle-container .cart-circle {
+  position: fixed;
+  z-index: 1000;
+  bottom: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #db5107;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.cart-circle-container .cart-circle:hover {
+  scale: 1.1;
+  transition: all 0.3s ease-in-out;
+}
+.cart-circle-container .cart-circle i {
+  font-size: 1.5rem;
+}
+.cart-circle-container .cart-circle .cart-count {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: #fffdcf;
+  font-family: "Jomhuria";
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
