@@ -63,7 +63,7 @@ if ($product) {
 
         <?php if (isset($_SESSION['userid']) && isset($_SESSION['username'])): ?>
             <button>
-                <a href="/dashboard/webbshop-uppgift/app/includes/">Buy now</a>
+                <a href="/dashboard/webbshop-uppgift/app/includes/CheckoutInc.php?id=<?php echo $_GET['id']; ?>">Buy now</a>
             </button>
         <?php else: ?>
             <button>

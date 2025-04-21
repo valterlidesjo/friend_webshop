@@ -4,8 +4,8 @@
 
 .home-start-container {
   @include m.flex(column, space-between, center);
-  height: 100svh;
-  padding: 2rem;
+  height: calc(100vh - 64px);
+  padding: 0 2rem 2rem 2rem;
   .start-text {
     @include m.flex(column, center, start);
     width: 100%;

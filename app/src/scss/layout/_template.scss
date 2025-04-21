@@ -2,10 +2,11 @@
 @use "../utils/mixins" as m;
 @use "../utils/variables" as v;
 
-.template-container{
-@include m.flex(column, start, center);
-    .template-main{
-        height: 100%;
-        width: 100%;
-    }
+.template-container {
+  @include m.flex(column, start, center);
+  .template-main {
+    height: 100%;
+    width: 100%;
+    margin-top: 64px;
+  }
 }

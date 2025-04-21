@@ -6,7 +6,7 @@
   @include m.flex(column);
   width: 100%;
   background-color: v.$sCol;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
   .login-header {
     width: 100%;
     @include m.flex(column, start, start);

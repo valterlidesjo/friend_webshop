@@ -5,7 +5,7 @@
 .friend-container {
   @include m.flex(column, start, center);
   width: 100%;
-  padding: 6rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
   .friend-page-back-button {
     width: 100%;
     @include m.flex(row, start, center);

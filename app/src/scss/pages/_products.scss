@@ -5,7 +5,7 @@
 .products-container {
   @include m.flex(column);
   width: 100%;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
   background-color: v.$sCol;
   .products-header-container {
     width: 100%;

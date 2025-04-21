@@ -1,0 +1,42 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.checkoutbox-image {
+  @include m.flex(column);
+  img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+.checkoutbox-text {
+  width: 100%;
+}
+.checkout-right {
+  width: 50%;
+  height: 5rem;
+  margin: 1rem 0;
+  @include m.flex(column, space-between, start);
+
+  .checkoutbox-header {
+    @include m.flex(row, space-between, center);
+    width: 100%;
+    h1,
+    p {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+  .checkoutbox-category {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  .crud-icons {
+    @include m.flex(row, end, center);
+    width: 100%;
+    .plus-minus {
+      padding-right: 0.5rem;
+    }
+  }
+}

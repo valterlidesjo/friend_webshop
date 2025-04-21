@@ -27,13 +27,19 @@
     i {
       font-size: 1.5rem;
     }
+
     .cart-count {
+      @include m.flex(column);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: v.$pCol;
       position: absolute;
-      top: 0px;
-      right: 10px;
-      color: v.$sCol;
+      top: -12px;
+      right: -7px;
+      color: v.$white;
       font-family: v.$sFont;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
 }

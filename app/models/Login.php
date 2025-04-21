@@ -21,10 +21,6 @@ class Login extends Dbh
             exit();
         };
 
-        session_start();
-        $_SESSION["userid"] = $user["id"];
-        $_SESSION["username"] = $user["name"];
-
         return $user;
     }
 }

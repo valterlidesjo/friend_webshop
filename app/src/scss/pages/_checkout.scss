@@ -1,0 +1,201 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.checkout-container {
+  width: 100%;
+  padding: 2rem;
+  @include m.flex(column, start, center);
+  .checkout-header {
+    @include m.flex(column, start, start);
+    h1 {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 0.8rem;
+      a {
+        font-weight: bold;
+        color: v.$black;
+      }
+    }
+  }
+  .checkout-products {
+    width: 100%;
+    padding-top: 2rem;
+    .checkout-box {
+      @include m.flex(row);
+      width: 100%;
+      @include m.border(1px, v.$pCol);
+      margin-bottom: 2rem;
+      border-radius: 20px;
+    }
+  }
+  .shop-more {
+    width: 100%;
+    @include m.flex(row, start);
+    p {
+      font-family: v.$sFont;
+      font-size: 1.8rem;
+    }
+    a {
+      font-family: v.$sFont;
+      font-size: 1.8rem;
+      color: v.$blue;
+      text-decoration: none;
+    }
+  }
+  .delivery {
+    width: 100%;
+    @include m.flex(column, center, start);
+    padding-top: 4rem;
+    gap: 1rem;
+
+    h2 {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .fast-delivery,
+    .free-delivery {
+      @include m.flex(row);
+      @include m.border(1px, v.$pCol);
+      width: 100%;
+      border-radius: 12px;
+      padding: 0.5rem;
+      .delivery-text {
+        @include m.flex(column, center, start);
+        width: 100%;
+        h3 {
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+        p {
+          font-size: 0.6rem;
+          color: v.$grey;
+        }
+      }
+      input {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        &:checked {
+          background-color: black;
+          border-color: black;
+        }
+      }
+    }
+  }
+
+  .checkout-details {
+    margin-top: 4rem;
+    h2 {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    form {
+      @include m.flex(column, start, start);
+      width: 100%;
+      gap: 0.5rem;
+      label {
+        text-decoration: underline;
+        font-size: 0.8rem;
+      }
+      p {
+        font-family: v.$sFont;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+      a {
+        font-family: v.$sFont;
+        font-size: 1.8rem;
+        color: v.$blue;
+        text-decoration: none;
+      }
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .payment-methods {
+        @include m.flex(row, space-between, center);
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        label {
+          text-decoration: none;
+        }
+
+        .payment-option {
+          position: relative;
+          width: 100%;
+
+          input {
+            display: none;
+          }
+
+          .content {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 1rem 1rem;
+            @include m.flex(column, start, start);
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            i {
+              font-size: 1.2rem;
+            }
+            p {
+              font-size: 0.6rem;
+              font-weight: bold;
+              font-family: v.$pFont;
+              margin-bottom: 0;
+            }
+          }
+
+          input:checked + .content {
+            border-color: black;
+            background-color: #f0f0f0;
+          }
+        }
+      }
+      .bottom-card-details {
+        @include m.flex(row);
+        gap: 1rem;
+      }
+    }
+    .checkout-total {
+      width: 100%;
+      @include m.flex(row, space-between, center);
+      margin-top: 2rem;
+      h3 {
+        font-size: 1rem;
+        color: v.$grey;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .checkout-btn {
+    width: 100%;
+    margin-top: 2rem;
+    button {
+      background-color: v.$pCol;
+      width: 100%;
+      border-radius: 40px;
+      border: none;
+      height: 100%;
+      padding: 8px 0;
+      font-family: v.$sFont;
+      font-size: 40px;
+      color: v.$white;
+    }
+  }
+}

@@ -184,6 +184,7 @@
 .template-container .template-main {
   height: 100%;
   width: 100%;
+  margin-top: 64px;
 }
 
 .home-start-container {
@@ -191,8 +192,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100svh;
-  padding: 2rem;
+  height: calc(100vh - 64px);
+  padding: 0 2rem 2rem 2rem;
 }
 .home-start-container .start-text {
   display: flex;
@@ -304,7 +305,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
   background-color: #fffdcf;
 }
 .products-container .products-header-container {
@@ -413,7 +414,7 @@
   justify-content: start;
   align-items: center;
   width: 100%;
-  padding: 6rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
 }
 .friend-container .friend-page-back-button {
   width: 100%;
@@ -524,7 +525,7 @@
   align-items: center;
   width: 100%;
   background-color: #fffdcf;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
 }
 .register-container .register-header {
   width: 100%;
@@ -641,7 +642,7 @@
   align-items: center;
   width: 100%;
   background-color: #fffdcf;
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
 }
 .login-container .login-header {
   width: 100%;
@@ -745,6 +746,237 @@
   text-decoration: none;
 }
 
+.checkout-container {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.checkout-container .checkout-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.checkout-container .checkout-header h1 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.checkout-container .checkout-header h3 {
+  font-size: 0.8rem;
+}
+.checkout-container .checkout-header h3 a {
+  font-weight: bold;
+  color: black;
+}
+.checkout-container .checkout-products {
+  width: 100%;
+  padding-top: 2rem;
+}
+.checkout-container .checkout-products .checkout-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #db5107;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+}
+.checkout-container .shop-more {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.checkout-container .shop-more p {
+  font-family: "Jomhuria";
+  font-size: 1.8rem;
+}
+.checkout-container .shop-more a {
+  font-family: "Jomhuria";
+  font-size: 1.8rem;
+  color: #5a1ee5;
+  text-decoration: none;
+}
+.checkout-container .delivery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-top: 4rem;
+  gap: 1rem;
+}
+.checkout-container .delivery h2 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.checkout-container .delivery .fast-delivery,
+.checkout-container .delivery .free-delivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #db5107;
+  width: 100%;
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+.checkout-container .delivery .fast-delivery .delivery-text,
+.checkout-container .delivery .free-delivery .delivery-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+.checkout-container .delivery .fast-delivery .delivery-text h3,
+.checkout-container .delivery .free-delivery .delivery-text h3 {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.checkout-container .delivery .fast-delivery .delivery-text p,
+.checkout-container .delivery .free-delivery .delivery-text p {
+  font-size: 0.6rem;
+  color: #747474;
+}
+.checkout-container .delivery .fast-delivery input,
+.checkout-container .delivery .free-delivery input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.checkout-container .delivery .fast-delivery input:checked,
+.checkout-container .delivery .free-delivery input:checked {
+  background-color: black;
+  border-color: black;
+}
+.checkout-container .checkout-details {
+  margin-top: 4rem;
+}
+.checkout-container .checkout-details h2 {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.checkout-container .checkout-details form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  gap: 0.5rem;
+}
+.checkout-container .checkout-details form label {
+  text-decoration: underline;
+  font-size: 0.8rem;
+}
+.checkout-container .checkout-details form p {
+  font-family: "Jomhuria";
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.checkout-container .checkout-details form a {
+  font-family: "Jomhuria";
+  font-size: 1.8rem;
+  color: #5a1ee5;
+  text-decoration: none;
+}
+.checkout-container .checkout-details form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.checkout-container .checkout-details form .payment-methods {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.checkout-container .checkout-details form .payment-methods label {
+  text-decoration: none;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option {
+  position: relative;
+  width: 100%;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option input {
+  display: none;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option .content {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option .content i {
+  font-size: 1.2rem;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option .content p {
+  font-size: 0.6rem;
+  font-weight: bold;
+  font-family: "Geist Mono";
+  margin-bottom: 0;
+}
+.checkout-container .checkout-details form .payment-methods .payment-option input:checked + .content {
+  border-color: black;
+  background-color: #f0f0f0;
+}
+.checkout-container .checkout-details form .bottom-card-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.checkout-container .checkout-details .checkout-total {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.checkout-container .checkout-details .checkout-total h3 {
+  font-size: 1rem;
+  color: #747474;
+}
+.checkout-container .checkout-details .checkout-total p {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.checkout-container .checkout-btn {
+  width: 100%;
+  margin-top: 2rem;
+}
+.checkout-container .checkout-btn button {
+  background-color: #db5107;
+  width: 100%;
+  border-radius: 40px;
+  border: none;
+  height: 100%;
+  padding: 8px 0;
+  font-family: "Jomhuria";
+  font-size: 40px;
+  color: white;
+}
+
 .friend-box {
   width: 100%;
   display: flex;
@@ -798,6 +1030,56 @@
   font-weight: bold;
 }
 
+.checkoutbox-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.checkoutbox-image img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.checkoutbox-text {
+  width: 100%;
+}
+
+.checkout-right {
+  width: 50%;
+  height: 5rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.checkout-right .checkoutbox-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.checkout-right .checkoutbox-header h1,
+.checkout-right .checkoutbox-header p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.checkout-right .checkoutbox-category p {
+  font-size: 0.8rem;
+}
+.checkout-right .crud-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+.checkout-right .crud-icons .plus-minus {
+  padding-right: 0.5rem;
+}
+
 .cart-circle-container {
   width: 100%;
   position: relative;
@@ -828,12 +1110,20 @@
   font-size: 1.5rem;
 }
 .cart-circle-container .cart-circle .cart-count {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #db5107;
   position: absolute;
-  top: 0px;
-  right: 10px;
-  color: #fffdcf;
+  top: -12px;
+  right: -7px;
+  color: white;
   font-family: "Jomhuria";
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
