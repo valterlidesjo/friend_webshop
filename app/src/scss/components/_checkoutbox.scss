@@ -37,6 +37,14 @@
     width: 100%;
     .plus-minus {
       padding-right: 0.5rem;
+      a {
+        text-decoration: none;
+        color: v.$black;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: v.$black;
     }
   }
 }

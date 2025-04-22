@@ -29,13 +29,13 @@
 
                 echo '<div class="checkout-box">';
 
-
                 $header = $product['product_name'];
                 $secHeader = $product['under_category_name'];
                 $price = '$' . $product['product_price'];
                 $image = '/dashboard/webbshop-uppgift/app' . $product['image_url'];
                 $quantity = $product['quantity'];
                 $id = $product['id'];
+                $productId = $product['product_id'];
 
                 include view('components/checkoutbox.php');
 
@@ -102,15 +102,16 @@
                 <input type="text" placeholder="MM/YY">
                 <input type="text" placeholder="CVC">
             </div>
+            <div class="checkout-total">
+                <h3>Total amount:</h3>
+                <p>
+                    $<?php echo htmlspecialchars($cartTotal); ?>
+                </p>
+            </div>
+            <div class="checkout-btn">
+                <button type="submit" name="submit">Place order</button>
+            </div>
         </form>
-        <div class="checkout-total">
-            <h3>Total amount:</h3>
-            <p>
-                $<?php echo htmlspecialchars($cartTotal); ?>
-            </p>
     </article>
-    <div class="checkout-btn">
-        <button>Place order</button>
-    </div>
 
 </section>

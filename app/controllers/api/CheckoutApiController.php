@@ -39,4 +39,24 @@ class CheckoutApiController extends Checkout
     {
         return parent::increaseQuantity($cartId, $productId);
     }
+    public function decreaseQuantity($cartId, $productId)
+    {
+        $cartItems = $this->getCartItems($cartId);
+
+        foreach ($cartItems as $item) {
+            if ($item['product_id'] == $productId) {
+                if ($item['quantity'] <= 1) {
+                    return 'confirmDelete';
+                } else {
+                    return parent::decreaseQuantity($cartId, $productId);
+                }
+            }
+        }
+
+        return false;
+    }
+    public function deleteFromCart($cartId, $productId)
+    {
+        return parent::deleteFromCart($cartId, $productId);
+    }
 }

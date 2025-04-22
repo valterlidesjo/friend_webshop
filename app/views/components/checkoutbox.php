@@ -37,7 +37,9 @@
     </div>
     <div class="crud-icons">
         <div class="plus-minus">
-            <i class="fa-solid fa-minus"></i>
+            <a href="/dashboard/webbshop-uppgift/app/includes/UpdateCartInc.php?action=decrease&product=<?php echo $productId; ?>">
+                <i class="fa-solid fa-minus"></i>
+            </a>
             <?php
             if (isset($quantity)) {
                 echo $quantity;
@@ -45,8 +47,12 @@
                 echo "<p>Inget innehåll kunde laddas – kontrollera sökvägen: $quantity</p>";
             }
             ?>
-            <i class="fa-solid fa-plus"></i>
+            <a href="/dashboard/webbshop-uppgift/app/includes/UpdateCartInc.php?action=increase&product=<?php echo $productId; ?>">
+                <i class="fa-solid fa-plus"></i>
+            </a>
         </div>
-        <i class="fa-solid fa-trash-can"></i>
+        <a href="/dashboard/webbshop-uppgift/app/includes/UpdateCartInc.php?action=delete&product=<?php echo $productId; ?>">
+            <i class="fa-solid fa-trash-can"></i>
+        </a>
     </div>
 </div>

@@ -92,4 +92,26 @@ class Checkout extends Dbh
         }
         return true;
     }
+    protected function decreaseQuantity($cartId, $productId)
+    {
+        $sql = "UPDATE cart_items SET quantity = quantity - 1 WHERE cart_id = ? AND product_id = ?;";
+        $stmt = $this->connect()->prepare($sql);
+        if (!$stmt->execute(array($cartId, $productId))) {
+            $stmt = null;
+            header("location: ../../?error=stmtfailed");
+            exit();
+        }
+        return true;
+    }
+    protected function deleteFromCart($cartId, $productId)
+    {
+        $sql = "DELETE FROM cart_items WHERE cart_id = ? AND product_id = ?;";
+        $stmt = $this->connect()->prepare($sql);
+        if (!$stmt->execute(array($cartId, $productId))) {
+            $stmt = null;
+            header("location: ../../?error=stmtfailed");
+            exit();
+        }
+        return true;
+    }
 }

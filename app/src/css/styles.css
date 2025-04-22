@@ -1079,6 +1079,14 @@
 .checkout-right .crud-icons .plus-minus {
   padding-right: 0.5rem;
 }
+.checkout-right .crud-icons .plus-minus a {
+  text-decoration: none;
+  color: black;
+}
+.checkout-right .crud-icons a {
+  text-decoration: none;
+  color: black;
+}
 
 .cart-circle-container {
   width: 100%;

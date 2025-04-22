@@ -168,34 +168,35 @@
         @include m.flex(row);
         gap: 1rem;
       }
+      .checkout-total {
+        width: 100%;
+        @include m.flex(row, space-between, center);
+        margin-top: 2rem;
+        h3 {
+          font-size: 1rem;
+          color: v.$grey;
+        }
+        p {
+          font-size: 1rem;
+          font-weight: bold;
+          font-family: v.$pFont;
+        }
+      }
     }
-    .checkout-total {
+    .checkout-btn {
       width: 100%;
-      @include m.flex(row, space-between, center);
       margin-top: 2rem;
-      h3 {
-        font-size: 1rem;
-        color: v.$grey;
+      button {
+        background-color: v.$pCol;
+        width: 100%;
+        border-radius: 40px;
+        border: none;
+        height: 100%;
+        padding: 8px 0;
+        font-family: v.$sFont;
+        font-size: 40px;
+        color: v.$white;
       }
-      p {
-        font-size: 1rem;
-        font-weight: bold;
-      }
-    }
-  }
-  .checkout-btn {
-    width: 100%;
-    margin-top: 2rem;
-    button {
-      background-color: v.$pCol;
-      width: 100%;
-      border-radius: 40px;
-      border: none;
-      height: 100%;
-      padding: 8px 0;
-      font-family: v.$sFont;
-      font-size: 40px;
-      color: v.$white;
     }
   }
 }
