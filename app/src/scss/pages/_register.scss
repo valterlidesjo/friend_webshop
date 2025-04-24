@@ -101,4 +101,10 @@
       }
     }
   }
+  @include m.desk {
+    .register-header,
+    .register-form {
+      max-width: 560px;
+    }
+  }
 }

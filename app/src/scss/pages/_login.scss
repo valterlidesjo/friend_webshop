@@ -96,4 +96,10 @@
       }
     }
   }
+  @include m.desk {
+    .login-form,
+    .login-header {
+      max-width: 560px;
+    }
+  }
 }

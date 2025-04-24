@@ -28,15 +28,15 @@ class RegisterController extends Register
             exit();
         }
         if ($this->invalidEmail() === false) {
-            header("location: ../../?error=email");
+            header("location: ../../?error=notRegistered");
             exit();
         }
         if ($this->pwdMatch() === false) {
-            header("location: ../../?error=passwordmatch");
+            header("location: ../../?error=notRegistered");
             exit();
         }
         if ($this->emailTakenCheck() === false) {
-            header("location: ../../?error=emailtaken");
+            header("location: ../../?error=notRegistered");
             exit();
         }
 

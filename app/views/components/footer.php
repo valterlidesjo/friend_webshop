@@ -6,7 +6,7 @@
             <a href="products?category=bears">Bears</a>
         </div>
         <div class="footer-right">
-            <a href="https://valterlidesjo.se/">Home</a>
+            <a href="/dashboard/webbshop-uppgift/">Home</a>
             <a href="https://valterlidesjo.se/">Contact</a>
             <a href="https://valterlidesjo.se/about-me">About Us</a>
         </div>

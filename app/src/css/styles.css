@@ -758,6 +758,12 @@
   color: #5a1ee5;
   text-decoration: none;
 }
+@media (min-width: 600px) {
+  .register-container .register-header,
+  .register-container .register-form {
+    max-width: 560px;
+  }
+}
 
 .login-container {
   display: flex;
@@ -868,6 +874,12 @@
   font-size: 2rem;
   color: #5a1ee5;
   text-decoration: none;
+}
+@media (min-width: 600px) {
+  .login-container .login-form,
+  .login-container .login-header {
+    max-width: 560px;
+  }
 }
 
 .checkout-container {
