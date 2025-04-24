@@ -2,41 +2,41 @@
 @use "../utils/mixins" as m;
 @use "../utils/variables" as v;
 
-.footer{
-    @include m.flex(column);
+.footer {
+  @include m.flex(column);
+  width: 100%;
+  text-decoration: none;
+  .footer-container {
+    @include m.flex(row, space-between);
     width: 100%;
-    text-decoration: none;
-    .footer-container{
-        @include m.flex(row, space-between);
-        width: 100%;
 
-        .footer-left{
-            @include m.flex(column, center, start);
-            width: 50%;
-            padding: 2rem;
-            gap: 8px;
-            a{
-                text-decoration: none;
-                color: v.$black;
-
-            }
-        }
-        .footer-right{
-            @include m.flex(column, center, end);
-            width: 50%;
-            padding: 2rem;
-            gap: 8px;
-            a{
-                text-decoration: none;
-                color: v.$black;
-
-            }
-
-        }
-    }
-    .valter{
+    .footer-left {
+      @include m.flex(column, center, start);
+      width: 50%;
+      padding: 2rem;
+      gap: 8px;
+      a {
         text-decoration: none;
         color: v.$black;
-        padding-bottom: 2rem;
+      }
     }
+    .footer-right {
+      @include m.flex(column, center, end);
+      width: 50%;
+      padding: 2rem;
+      gap: 8px;
+      a {
+        text-decoration: none;
+        color: v.$black;
+      }
+    }
+  }
+  .valter {
+    text-decoration: none;
+    color: v.$black;
+    padding-bottom: 2rem;
+  }
+  @include m.desk {
+    font-size: 1.4rem;
+  }
 }

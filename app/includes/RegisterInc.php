@@ -21,9 +21,9 @@ if (isset($_POST["submit"])) {
     $v->field('name')->required()->alpha([' '])->min_len(2)->max_len(50);
     $v->field('email')->required()->email()->min_len(6)->max_len(50);
     $v->field('password')->required()->alpha_num(['!@#$%&/\=*<>-_:;,."£'])->min_len(8)->max_len(30);
-    $v->field('passwordRepeat')->required()->alpha_num(['!@#$%&/\=*<>-_:;,."£'])->min_len(8)->max_len(30)->equals($_POST['password']);
+    $v->field('passwordRepeat')->required()->equals($password);
     $v->field('adress')->required()->alpha_num([' '])->min_len(5)->max_len(50);
-    $v->field('city')->required()->alpha([' '])->min_len(5)->max_len(50);
+    $v->field('city')->required()->alpha([' '])->min_len(2)->max_len(50);
     $v->field('postCode')->required()->numeric()->min_len(3)->max_len(10);
     if ($v->is_valid()) {
         $register->useRegisterUser();

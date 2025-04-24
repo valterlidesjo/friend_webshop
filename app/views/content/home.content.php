@@ -1,15 +1,17 @@
 <section class="home-start-container">
-    <div class="start-text">
-        <p>A <span class="friend">FRIEND.</span> <br>
-            MADE <br>
-            FOR YOU</p>
-    </div>
-    <div class="start-image">
-        <img src="/dashboard/webbshop-uppgift/app/src/assets/alien1.jpg" alt="Alien holding hand" class="">
+    <div class="test">
+        <div class="start-text">
+            <p>A <span class="friend">FRIEND.</span> <br>
+                MADE <br>
+                FOR YOU</p>
+        </div>
+        <div class="start-image">
+            <img src="/dashboard/webbshop-uppgift/app/src/assets/alien1.jpg" alt="Alien holding hand">
+        </div>
     </div>
     <div class="start-button">
         <button class="scroll-btn">
-            <p >Discover more</p>
+            <p>Discover more</p>
         </button>
 
     </div>
@@ -70,7 +72,7 @@
             <p>Birds</p>
         </a>
     </div>
-        <a href="products?category=aliens" class="category-btn">
-            <p>Aliens</p>
-        </a>
+    <a href="products?category=aliens" class="category-btn">
+        <p>Aliens</p>
+    </a>
 </section>

@@ -9,13 +9,4 @@ $router->get('/products', 'app/controllers/ProductsController.php', 'show');
 $router->get('/register', 'app/controllers/RegisterController.php', 'show');
 $router->get('/login', 'app/controllers/LoginController.php', 'show');
 $router->get('/checkout', 'app/controllers/CheckoutController.php', 'show');
-
-
-
-
-
-
-
-//API routes
-// $router->get('/api/products', 'app/controllers/api/GetProductsController.php', 'getProducts');
-// $router->get('/api/categories', 'app/controllers/api/GetCategoriesController.php', 'useGetCategories');
+$router->get('/confirmation', 'app/controllers/ConfirmationController.php', 'show');

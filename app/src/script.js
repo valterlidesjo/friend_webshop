@@ -59,3 +59,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  let inputs = document.querySelectorAll("input");
+
+  inputs.forEach((input) => {
+    input.addEventListener("focus", function () {
+      let parentDiv = this.closest("div");
+      let errorSpan;
+
+      if (
+        parentDiv &&
+        parentDiv.nextElementSibling?.classList.contains("error")
+      ) {
+        errorSpan = parentDiv.nextElementSibling;
+      } else if (this.nextElementSibling?.classList.contains("error")) {
+        errorSpan = this.nextElementSibling;
+      }
+
+      if (errorSpan) {
+        errorSpan.textContent = "";
+      }
+    });
+  });
+});

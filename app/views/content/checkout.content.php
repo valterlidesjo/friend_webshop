@@ -71,7 +71,7 @@
     </div>
     <article class="checkout-details">
         <h2>Payment Details</h2>
-        <form action="">
+        <form action="/dashboard/webbshop-uppgift/app/includes/CheckoutConfirmationInc.php?cartid=<?php echo $cartId; ?>&email=<?php echo $email; ?>&carttotal=<?php echo $cartTotal; ?>" method="POST">
             <label for="email">Email adress</label>
             <input type="email" name="email" id="email" required value="<?php echo htmlspecialchars($email); ?>">
             <p>Not your email? <a href="/dashboard/webbshop-uppgift/app/includes/LogoutInc.php">Logout</a></p>
@@ -100,13 +100,13 @@
             <input type="number" placeholder="Card number">
             <div class="bottom-card-details">
                 <input type="text" placeholder="MM/YY">
-                <input type="text" placeholder="CVC">
+                <input type="number" placeholder="CVC">
             </div>
             <div class="checkout-total">
                 <h3>Total amount:</h3>
-                <p>
+                <h4 class="total-amount">
                     $<?php echo htmlspecialchars($cartTotal); ?>
-                </p>
+                </h4>
             </div>
             <div class="checkout-btn">
                 <button type="submit" name="submit">Place order</button>

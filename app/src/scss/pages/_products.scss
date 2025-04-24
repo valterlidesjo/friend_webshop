@@ -91,4 +91,41 @@
       color: v.$black;
     }
   }
+  @include m.desk {
+    .products-header-container {
+      .products-header {
+        p {
+          font-size: 1.2rem;
+        }
+        .products-sorting {
+          @include m.flex(row, start, center);
+          gap: 2rem;
+          span {
+            height: 3rem;
+            width: 3rem;
+
+            a {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      .products-map {
+        margin-left: 2rem;
+        img {
+          height: 158px;
+          border-radius: 30px;
+        }
+        .products-map-text {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .products {
+      @include m.flex(row, center, center);
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
 }

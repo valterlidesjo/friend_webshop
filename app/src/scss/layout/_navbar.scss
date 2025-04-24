@@ -85,6 +85,12 @@
       i {
         font-size: 1.8rem;
       }
+      @include m.desk {
+        @include m.flex(row, end, center);
+        .search-form {
+          width: 30%;
+        }
+      }
     }
   }
 }

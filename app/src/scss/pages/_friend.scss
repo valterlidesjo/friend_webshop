@@ -79,4 +79,14 @@
       }
     }
   }
+  @include m.desk {
+    .flex-desk {
+      @include m.flex(row);
+    }
+    .buy-button {
+      button {
+        max-width: 560px;
+      }
+    }
+  }
 }

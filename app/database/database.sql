@@ -53,3 +53,27 @@ CREATE TABLE IF NOT EXISTS cart_items (
     FOREIGN KEY (cart_id) REFERENCES shopping_carts(id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
+
+DELIMITER //
+
+CREATE TRIGGER update_cart_timestamp_after_insert
+AFTER INSERT ON cart_items
+FOR EACH ROW
+BEGIN
+    UPDATE shopping_carts
+    SET updated_at = NOW()
+    WHERE id = NEW.cart_id;
+END;
+//
+
+CREATE TRIGGER update_cart_timestamp_after_update
+AFTER UPDATE ON cart_items
+FOR EACH ROW
+BEGIN
+    UPDATE shopping_carts
+    SET updated_at = NOW()
+    WHERE id = NEW.cart_id;
+END;
+//
+
+DELIMITER ;

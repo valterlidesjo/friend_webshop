@@ -6,17 +6,21 @@
   @include m.flex(column, space-between, center);
   height: calc(100vh - 64px);
   padding: 0 2rem 2rem 2rem;
-  .start-text {
-    @include m.flex(column, center, start);
+  .test {
     width: 100%;
-    padding-top: 64px;
-    p {
-      font-family: v.$sFont;
-      font-size: 100px;
-      line-height: 60%;
-      .friend {
+    height: 60%;
+    .start-text {
+      @include m.flex(column, center, start);
+      width: 100%;
+      padding-top: 64px;
+      p {
         font-family: v.$sFont;
-        color: v.$pCol;
+        font-size: 80px;
+        line-height: 60%;
+        .friend {
+          font-family: v.$sFont;
+          color: v.$pCol;
+        }
       }
     }
   }
@@ -34,6 +38,27 @@
         font-family: v.$sFont;
         font-size: 40px;
         color: v.$white;
+      }
+    }
+  }
+  @include m.desk {
+    .test {
+      @include m.flex(row);
+      padding-top: 5rem;
+      .start-text {
+        padding-left: 4rem;
+        p {
+          font-size: 100px;
+        }
+      }
+    }
+    .start-button {
+      max-width: 460px;
+      button {
+        padding: 4px 0;
+        p {
+          font-size: 50px;
+        }
       }
     }
   }
@@ -61,6 +86,23 @@
       margin-bottom: 2rem;
     }
   }
+  @include m.desk {
+    .popular-text {
+      p {
+        font-size: 80px;
+      }
+    }
+
+    .popular {
+      @include m.flex(row, center, center);
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      .popular-box {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .categories-container {
@@ -86,6 +128,17 @@
       font-family: v.$sFont;
       font-size: 40px;
       color: v.$white;
+    }
+  }
+  @include m.desk {
+    .categories-header {
+      font-size: 80px;
+    }
+    .category-btn {
+      padding: 4px 3rem;
+      p {
+        font-size: 60px;
+      }
     }
   }
 }

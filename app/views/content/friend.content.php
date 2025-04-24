@@ -31,34 +31,36 @@ if ($product) {
             <i class="fa-solid fa-arrow-left"></i>
         </button>
     </div>
-    <div class="friend-page-image-container">
-        <img src="/dashboard/webbshop-uppgift/app<?php echo $image_url ?>" alt="Friend Image" class="friend-page-image">
+    <div class="flex-desk">
+        <div class="friend-page-image-container">
+            <img src="/dashboard/webbshop-uppgift/app<?php echo $image_url ?>" alt="Friend Image" class="friend-page-image">
+        </div>
+        <article class="friend-info-container">
+            <div class="friend-page-name">
+                <p><?php echo $name ?></p>
+            </div>
+            <div class="friend-page-category">
+                <p>Category:</p>
+                <p class="friend-page-desc"><?php echo $category ?></p>
+            </div>
+            <div class="friend-page-race">
+                <p>Race:</p>
+                <p class="friend-page-desc"><?php echo $race ?></p>
+            </div>
+            <div class="friend-page-stock">
+                <p>Stocklevel:</p>
+                <p class="friend-page-desc"><?php echo $stock ?></p>
+            </div>
+            <div class="friend-page-popularity">
+                <p>Popularity, max 100:</p>
+                <p class="friend-page-desc"><?php echo $popularity ?></p>
+            </div>
+            <div class="friend-page-price">
+                <p>Price</p>
+                <p class="friend-page-desc">$<?php echo $price ?></p>
+            </div>
+        </article>
     </div>
-    <article class="friend-info-container">
-        <div class="friend-page-name">
-            <p><?php echo $name ?></p>
-        </div>
-        <div class="friend-page-category">
-            <p>Category:</p>
-            <p class="friend-page-desc"><?php echo $category ?></p>
-        </div>
-        <div class="friend-page-race">
-            <p>Race:</p>
-            <p class="friend-page-desc"><?php echo $race ?></p>
-        </div>
-        <div class="friend-page-stock">
-            <p>Stocklevel:</p>
-            <p class="friend-page-desc"><?php echo $stock ?></p>
-        </div>
-        <div class="friend-page-popularity">
-            <p>Popularity, max 100:</p>
-            <p class="friend-page-desc"><?php echo $popularity ?></p>
-        </div>
-        <div class="friend-page-price">
-            <p>Price</p>
-            <p class="friend-page-desc">$<?php echo $price ?></p>
-        </div>
-    </article>
     <div class="buy-button">
 
         <?php if (isset($_SESSION['userid']) && isset($_SESSION['username'])): ?>

@@ -40,6 +40,10 @@
           outline: none;
         }
       }
+      .error {
+        color: red;
+        font-weight: bold;
+      }
       .password-container,
       .password-repeat-container {
         @include m.flex(row);

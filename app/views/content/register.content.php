@@ -19,10 +19,10 @@ function error($field)
     </div>
     <div class="register-form">
         <form method="POST" action="/dashboard/webbshop-uppgift/app/includes/RegisterInc.php">
-            <input type="text" id="name" name="name" placeholder="Enter name">
+            <input type="text" id="name" name="name" placeholder="Enter name" value="<?= old('name') ?>" required>
             <span class="error"><?= error('name') ?></span>
 
-            <input type="email" id="email" name="email" placeholder="Enter email" required>
+            <input type="email" id="email" name="email" placeholder="Enter email" value="<?= old('email') ?>" required>
             <span class="error"><?= error('email') ?></span>
 
             <div class="password-container">
@@ -37,13 +37,13 @@ function error($field)
             </div>
             <span class="error"><?= error('passwordRepeat') ?></span>
 
-            <input type="text" id="adress" name="adress" placeholder="Adress" required>
+            <input type="text" id="adress" name="adress" placeholder="Adress" value="<?= old('adress') ?>" required>
             <span class="error"><?= error('input') ?></span>
 
-            <input type="text" id="city" name="city" placeholder="City" required>
+            <input type="text" id="city" name="city" placeholder="City" value="<?= old('city') ?>" required>
             <span class="error"><?= error('city') ?></span>
 
-            <input type="number" id="postCode" name="postCode" placeholder="Post Code" required>
+            <input type="number" id="postCode" name="postCode" placeholder="Post Code" value="<?= old('postCode') ?>" required>
             <span class="error"><?= error('postCode') ?></span>
 
             <button type="submit" name="submit">Register</button>
@@ -53,3 +53,8 @@ function error($field)
         <p>Already a member?<a href="/dashboard/webbshop-uppgift/login">Login</a></p>
     </div>
 </section>
+
+<?php
+unset($_SESSION['validation_errors']);
+unset($_SESSION['old_input']);
+?>

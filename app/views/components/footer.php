@@ -8,7 +8,7 @@
         <div class="footer-right">
             <a href="https://valterlidesjo.se/">Home</a>
             <a href="https://valterlidesjo.se/">Contact</a>
-            <a href="https://valterlidesjo.se/">About Us</a>
+            <a href="https://valterlidesjo.se/about-me">About Us</a>
         </div>
     </div>
     <a href="https://valterlidesjo.se/" class="valter">Made by Valter Lidesjö</a>
