@@ -11,10 +11,15 @@
         $cartId = $_SESSION['cartid'] ?? null;
         $email = $_SESSION['email'] ?? '';
         $cartTotal = $_SESSION['carttotal'] ?? 0;
+        $totalItems = $_SESSION['totalitems'] ?? 0;
+
 
         if (!$userId || !$cartId) {
             echo "<p>Something went wrong. Please log in again.</p>";
             exit();
+        }
+        if ($totalItems >= 0) {
+            header("location: /dashboard/webbshop-uppgift/products?noProductsInCart");
         }
 
         require_once 'app/database/dbh.classes.php';

@@ -1114,6 +1114,49 @@
   color: white;
 }
 
+.confirmation-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+.confirmation-section .confirmation-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.confirmation-section .confirmation-info h2,
+.confirmation-section .confirmation-info h3 {
+  font-size: 1rem;
+}
+.confirmation-section .confirmation-info .last-confirmation {
+  padding-bottom: 2rem;
+}
+.confirmation-section .confirmation-info .last-confirmation span {
+  color: #db5107;
+  font-weight: bold;
+  font-family: "Jomhuria";
+  font-size: 3rem;
+}
+.confirmation-section .shop-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.confirmation-section .shop-more p {
+  font-size: 1.5rem;
+}
+@media (min-width: 600px) {
+  .confirmation-section .confirmation-info {
+    width: 50%;
+  }
+}
+
 .friend-box {
   width: 100%;
   display: flex;

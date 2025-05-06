@@ -1,0 +1,37 @@
+@use "../utils/global" as g;
+@use "../utils/mixins" as m;
+@use "../utils/variables" as v;
+
+.confirmation-section {
+  width: 100%;
+  @include m.flex(column);
+  padding: 0 2rem;
+  .confirmation-info {
+    width: 100%;
+    @include m.flex(column, start, start);
+    h2,
+    h3 {
+      font-size: 1rem;
+    }
+    .last-confirmation {
+      padding-bottom: 2rem;
+      span {
+        color: v.$pCol;
+        font-weight: bold;
+        font-family: v.$sFont;
+        font-size: 3rem;
+      }
+    }
+  }
+  .shop-more {
+    @include m.flex(column, start, start);
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  @include m.desk {
+    .confirmation-info {
+      width: 50%;
+    }
+  }
+}

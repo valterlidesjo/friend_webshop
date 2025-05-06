@@ -18,6 +18,7 @@ $_SESSION['checkouttotal'] = $cartTotal;
 use PHPMailer\PHPMailer\PHPMailer;
 
 if (isset($_POST["submit"])) {
+
     $mail = new PHPMailer();
     $mail->isSMTP();
     $mail->Host = 'sandbox.smtp.mailtrap.io';

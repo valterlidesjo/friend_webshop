@@ -5,7 +5,6 @@ class GetProducts extends Dbh
     protected function getProducts($category = null, $sortOption = null, $offset = 0, $limit = 10)
     {
         $where = '';
-        $orderBy = 'products.id ASC';
 
         if ($category) {
             switch ($category) {
@@ -21,21 +20,13 @@ class GetProducts extends Dbh
             }
         }
 
-        if ($sortOption) {
-            switch ($sortOption) {
-                case 'name_asc':
-                    $orderBy = 'products.id ASC';
-                    break;
-                case 'price_asc':
-                    $orderBy = 'products.price ASC';
-                    break;
-                case 'price_desc':
-                    $orderBy = 'products.price DESC';
-                    break;
-                default:
-                    $orderBy = 'RAND()';
-            }
-        }
+        $allowedSort = [
+            'name_asc' => 'products.id ASC',
+            'price_asc' => 'products.price ASC',
+            'price_desc' => 'products.price DESC',
+        ];
+
+        $orderBy = $allowedSort[$sortOption] ?? 'products.id ASC';
         $sql = "SELECT products.*, under_categories.name AS under_category_name FROM products JOIN under_categories ON products.under_category_id = under_categories.id $where ORDER BY $orderBy LIMIT :limit OFFSET :offset;";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
@@ -47,9 +38,17 @@ class GetProducts extends Dbh
         }
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    protected function searchProducts($searchTerm, $offset = 0, $limit = 0)
+    protected function searchProducts($searchTerm, $offset = 0, $limit = 0, $sortOption = null)
     {
-        $sql = "SELECT products.*, under_categories.name AS under_category_name FROM products JOIN under_categories ON products.under_category_id = under_categories.id JOIN categories ON under_categories.category_id = categories.id WHERE products.name LIKE ? OR under_categories.name LIKE ? OR categories.name LIKE ? LIMIT ? OFFSET ?;";
+        $allowedSort = [
+            'name_asc' => 'products.id ASC',
+            'price_asc' => 'products.price ASC',
+            'price_desc' => 'products.price DESC',
+        ];
+
+        $orderBy = $allowedSort[$sortOption] ?? 'products.id ASC';
+
+        $sql = "SELECT products.*, under_categories.name AS under_category_name FROM products JOIN under_categories ON products.under_category_id = under_categories.id JOIN categories ON under_categories.category_id = categories.id WHERE products.name LIKE ? OR under_categories.name LIKE ? OR categories.name LIKE ? ORDER BY $orderBy LIMIT ? OFFSET ?;";
         $stmt = $this->connect()->prepare($sql);
         $searchWildcard = '%' . $searchTerm . '%';
 

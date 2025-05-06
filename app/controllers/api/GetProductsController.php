@@ -42,12 +42,13 @@ class GetProductsController extends GetProducts
     public function useSearchProducts()
     {
         $q = $_GET['q'] ?? null;
+        $sortOption = $_GET['sort'] ?? 'id_asc';
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $limit = 10;
         $offset = ($page - 1) * $limit;
 
         if ($q) {
-            $this->products = $this->searchProducts($q, $offset, $limit);
+            $this->products = $this->searchProducts($q, $offset, $limit, $sortOption);
 
             if (empty($this->products)) {
                 $this->response['status'] = 'error';
