@@ -4,13 +4,15 @@
     "description": "PHP-project with Webshop, Login and register",
     "main": "index.php",
     "scripts": {
-      "sass": "sass app/src/scss/styles.scss app/src/css/styles.css",
-      "watch": "sass --watch app/src/scss/styles.scss:app/src/css/styles.css"
+        "sass": "sass app/src/scss/styles.scss app/src/css/styles.css",
+        "watch": "sass --watch app/src/scss/styles.scss:app/src/css/styles.css"
     },
     "author": "Valter Lidesjö",
     "license": "MIT",
     "devDependencies": {
-      "sass": "^1.72.0"
+        "sass": "^1.72.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.5.0"
     }
-  }
-  
+}
