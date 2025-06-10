@@ -22,6 +22,7 @@
     </div>
     <div class="popular">
         <?php
+
         require_once 'app/database/dbh.classes.php';
         require_once 'app/models/GetPopularProducts.php';
         require_once 'app/controllers/api/GetPopularProductsController.php';
