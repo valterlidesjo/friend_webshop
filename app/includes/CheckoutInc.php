@@ -33,14 +33,15 @@ try {
 
     $cartId = $cart[0]['id'];
     $cartItems = $checkout->getCartItems($cartId);
-
     $productExists = false;
+
     foreach ($cartItems as $item) {
         if ($item['product_id'] == $productId) {
             $productExists = true;
             break;
         }
     }
+
 
     if ($productExists) {
         $checkout->increaseQuantity($cartId, $productId);

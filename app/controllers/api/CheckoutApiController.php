@@ -1,40 +1,42 @@
 <?php
 
-class CheckoutApiController extends Checkout
+class CheckoutApiController
 {
     private $userId;
+    private $checkoutModel;
 
     public function __construct($userId)
     {
         $this->userId = $userId;
+        $this->checkoutModel = new Checkout();
     }
     public function useGetShoppingCart()
     {
-        return parent::getShoppingCart($this->userId);
+        return $this->checkoutModel->getShoppingCart($this->userId);
     }
     public function useCreateCart()
     {
-        return parent::createCart($this->userId);
+        return $this->checkoutModel->createCart($this->userId);
     }
     public function getCartItems($cartId)
     {
-        return parent::getCartItems($cartId);
+        return $this->checkoutModel->getCartItems($cartId);
     }
     public function totalCartItems($cartId)
     {
-        return parent::totalCartItems($cartId);
+        return $this->checkoutModel->totalCartItems($cartId);
     }
     public function totalCartCost($cartId)
     {
-        return parent::totalCartCost($cartId);
+        return $this->checkoutModel->totalCartCost($cartId);
     }
     public function addToCart($cartId, $productId)
     {
-        return parent::addToCart($cartId, $productId);
+        return $this->checkoutModel->addToCart($cartId, $productId);
     }
     public function increaseQuantity($cartId, $productId)
     {
-        return parent::increaseQuantity($cartId, $productId);
+        return $this->checkoutModel->increaseQuantity($cartId, $productId);
     }
     public function decreaseQuantity($cartId, $productId)
     {
@@ -45,7 +47,7 @@ class CheckoutApiController extends Checkout
                 if ($item['quantity'] <= 1) {
                     return 'confirmDelete';
                 } else {
-                    return parent::decreaseQuantity($cartId, $productId);
+                    return $this->checkoutModel->decreaseQuantity($cartId, $productId);
                 }
             }
         }
@@ -54,6 +56,6 @@ class CheckoutApiController extends Checkout
     }
     public function deleteFromCart($cartId, $productId)
     {
-        return parent::deleteFromCart($cartId, $productId);
+        return $this->checkoutModel->deleteFromCart($cartId, $productId);
     }
 }

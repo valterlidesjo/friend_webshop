@@ -1,14 +1,20 @@
 <?php
 
-class LoginController extends Login
+require_once '../database/dbh.classes.php';
+require_once '../models/Login.php';
+
+class LoginController
 {
     private $email;
     private $password;
+    private $loginModel;
+    
 
     public function __construct($email, $password)
     {
         $this->email = $email;
         $this->password = $password;
+        $this->loginModel = new Login();
     }
 
     public function loginUser()
@@ -18,7 +24,7 @@ class LoginController extends Login
             exit();
         }
 
-        $user = $this->getUser($this->email, $this->password);
+        $user = $this->loginModel->getUser($this->email, $this->password);
 
         if ($user) {
             session_start();

@@ -26,6 +26,7 @@
         require_once 'app/models/GetPopularProducts.php';
         require_once 'app/controllers/api/GetPopularProductsController.php';
 
+
         $controller = new GetPopularProductsController();
         $response = $controller->useGetPopularProducts();
 

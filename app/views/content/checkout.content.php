@@ -18,7 +18,7 @@
             echo "<p>Something went wrong. Please log in again.</p>";
             exit();
         }
-        if ($totalItems >= 0) {
+        if ($totalItems == 0) {
             header("location: /dashboard/webbshop-uppgift/products?noProductsInCart");
         }
 
@@ -74,9 +74,14 @@
             <input type="radio" name="shipping" value="free">
         </div>
     </div>
-    <article class="checkout-details">
+    <form action="/dashboard/webbshop-uppgift/app/includes/CheckoutConfirmationInc.php?cartid=<?php echo $cartId; ?>&email=<?php echo $email; ?>&carttotal=<?php echo $cartTotal; ?>" method="POST">
+                <div class="checkout-btn">
+                <button type="submit" name="submit">Place order</button>
+            </div>
+</form>
+
+    <!-- <article class="checkout-details">
         <h2>Payment Details</h2>
-        <form action="/dashboard/webbshop-uppgift/app/includes/CheckoutConfirmationInc.php?cartid=<?php echo $cartId; ?>&email=<?php echo $email; ?>&carttotal=<?php echo $cartTotal; ?>" method="POST">
             <label for="email">Email adress</label>
             <input type="email" name="email" id="email" required value="<?php echo htmlspecialchars($email); ?>">
             <p>Not your email? <a href="/dashboard/webbshop-uppgift/app/includes/LogoutInc.php">Logout</a></p>
@@ -113,10 +118,8 @@
                     $<?php echo htmlspecialchars($cartTotal); ?>
                 </h4>
             </div>
-            <div class="checkout-btn">
-                <button type="submit" name="submit">Place order</button>
-            </div>
+            
         </form>
-    </article>
+    </article> -->
 
 </section>

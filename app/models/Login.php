@@ -1,7 +1,7 @@
 <?php
 class Login extends Dbh
 {
-    protected function getUser($email, $password)
+    public function getUser($email, $password)
     {
         $sql = "SELECT * FROM customers WHERE email = ?;";
         $stmt = $this->connect()->prepare($sql);

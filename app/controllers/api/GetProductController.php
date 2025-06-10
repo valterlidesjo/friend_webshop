@@ -1,11 +1,15 @@
 <?php
 
-class GetProductController extends GetProduct {
+class GetProductController {
     private $products;
     private $response = [];
+    private $getProductModel;
+    public function __construct() {
+        $this->getProductModel = new GetProduct();
+    }
 
     public function useGetProduct($id) {
-        $this->products = $this->getProduct($id);
+        $this->products = $this->getProductModel->getProduct($id);
         if (empty($this->products)) {
             $this->response['status'] = 'error';
             $this->response['message'] = 'No products found';

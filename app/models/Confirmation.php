@@ -2,7 +2,7 @@
 
 class Confirmation extends Dbh
 {
-    protected function deleteCartItems($cartId)
+    public function deleteCartItems($cartId)
     {
         $sql = "DELETE FROM cart_items WHERE cart_id = ?;";
         $stmt = $this->connect()->prepare($sql);

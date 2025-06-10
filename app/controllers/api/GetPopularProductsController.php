@@ -1,11 +1,15 @@
 <?php
 
-class GetPopularProductsController extends GetPopularProducts {
+class GetPopularProductsController {
     private $products;
     private $response = [];
+    private $getPopularProductsModel;
+    public function __construct() {
+        $this->getPopularProductsModel = new GetPopularProducts();
+    }
 
     public function useGetPopularProducts() {
-        $this->products = $this->getPopularProducts();
+        $this->products = $this->getPopularProductsModel->getPopularProducts();
         if (empty($this->products)) {
             $this->response['status'] = 'error';
             $this->response['message'] = 'No products found';

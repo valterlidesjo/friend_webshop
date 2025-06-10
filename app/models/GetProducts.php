@@ -2,7 +2,7 @@
 
 class GetProducts extends Dbh
 {
-    protected function getProducts($category = null, $sortOption = null, $offset = 0, $limit = 10)
+    public function getProducts($category = null, $sortOption = null, $offset = 0, $limit = 10)
     {
         $where = '';
 
@@ -38,7 +38,7 @@ class GetProducts extends Dbh
         }
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    protected function searchProducts($searchTerm, $offset = 0, $limit = 0, $sortOption = null)
+    public function searchProducts($searchTerm, $offset = 0, $limit = 0, $sortOption = null)
     {
         $allowedSort = [
             'name_asc' => 'products.id ASC',
@@ -62,7 +62,7 @@ class GetProducts extends Dbh
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    protected function totalProducts($category = null, $searchTerm = null)
+    public function totalProducts($category = null, $searchTerm = null)
     {
         $where = '';
         $params = [];
@@ -114,7 +114,7 @@ class GetProducts extends Dbh
         return $stmt->fetchColumn();
     }
 
-    protected function totalSearchProducts($searchTerm)
+    public function totalSearchProducts($searchTerm)
     {
         $sql = "SELECT COUNT(*) 
             FROM products 
