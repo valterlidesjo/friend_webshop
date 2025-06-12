@@ -134,4 +134,5 @@ class GetProducts extends Dbh
 
         return $stmt->fetchColumn();
     }
+    
 }
